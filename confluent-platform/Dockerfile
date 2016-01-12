@@ -8,14 +8,12 @@ ENV SCALA_VERSION="2.11.7"
 ENV JAVA_VERSION="7"
 ENV CONFLUENT_MAJOR_VERSION="2.0"
 
-RUN apt-get update -qq
-RUN apt-get install build-essential -y
-RUN apt-get install sudo -y
-RUN apt-get install software-properties-common -y
-RUN apt-get install telnet -y
-RUN apt-get install curl -y
-RUN apt-get install wget -y
-RUN apt-get install apt-file -y
+RUN apt-get update -qq && apt-get install -y build-essential && apt-get install -y software-properties-common
+RUN apt-get install -y sudo
+RUN apt-get install -y telnet
+RUN apt-get install -y curl
+RUN apt-get install -y wget
+RUN apt-get install -y apt-file
 RUN apt-file update
 RUN apt-get upgrade -y
 RUN wget -qO - http://packages.confluent.io/deb/2.0/archive.key | apt-key add -
