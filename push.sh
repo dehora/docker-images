@@ -5,6 +5,7 @@
 for SCALA_VERSION in ${SCALA_VERSIONS}; do
     docker push dehora/platform-${SCALA_VERSION}
 done
+
 docker push dehora/platform
 
 docker push dehora/zookeeper
